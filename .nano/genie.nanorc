@@ -1,0 +1,53 @@
+## Here is an example for Genie.
+syntax "genie" "\.gs$"
+
+# Namespace.
+color magenta "\b(uses|namespace)\b"
+
+# Data types.
+color green "\b(bool|byte|char|date|datetime|decimal|double|float|int|long|object|sbyte|short|single|string|ulong|ushort)\b"
+
+# Definitions.
+color brightred "\b(const|class|construct|def|delegate|enum|exception|extern|event|final|get|init|inline|interface|override|prop|return|set|static|struct|var|virtual|weak)\b"
+
+# Keywords.
+color red "\b(abstract|as|and|break|case|cast|continue|default|delete|div|do|downto|dynamic|else|ensures|except|extern|finally|for|if|implements|in|isa|is|lock|new|not|of|out|or|otherwise|pass|private|raise|raises|readonly|ref|requires|to|try|unless|when|while)\b"
+
+# Special variables.
+color brightcyan "\b(self|super)\b"
+
+# Null value.
+color brightyellow "\b(null)\b"
+
+# Boolean.
+color yellow "\b(false|true)\b"
+
+# Builtin functions.
+color cyan "\b(array|assert|dict|list|max|min|print|prop|sizeof|typeof)\b"
+
+# Numbers.
+color brightmagenta "[0-9][0-9\.]*(m|ms|d|h|s|f|F|l|L)?"
+
+# Regular expression.
+color brightgreen "/(\\.|[^/])*/"
+
+# Double quoted string.
+color brightblue ""(\\.|[^"])*""
+
+# Single quoted string.
+color brightblue "'(\\.|[^'])*'"
+
+# Multiline string.
+color blue start=""""" end="""""
+
+# Line comment.
+color yellow "(^|[[:space:]])//.*"
+
+# Block comment.
+color yellow start="/\*" end="\*/"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"
+
+# Spaces in front or rear of tabs.
+color ,red "	+ +| +	+"

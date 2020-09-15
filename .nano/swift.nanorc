@@ -1,0 +1,64 @@
+##############################################################################
+# Swift syntax highlighting for Nano. v.1.1
+##############################################################################
+
+syntax "Swift" "\.swift$"
+
+# Default
+color white ".+"
+
+# Operators
+color yellow "[.:;,+*|=!?\%]" "<" ">" "/" "-" "&"
+color brightyellow "[!]"
+
+# Statements
+color magenta  "\b(class|import|let|var|struct|enum|func|if|else|switch|case|default|for|in|static|private|public|throws)\b"
+color magenta  "\b(lazy|get|set|self|willSet|didSet|override|super|convenience|weak|strong|mutating|return|guard)\b"
+color magenta  "\b(protocol|typealias|prefix|postfix|operator|extension|internal|external|unowned)\b"
+
+# Keywords
+color cyan "\b(print)\b"
+color magenta "\b(init)\b"
+
+# Attribute
+color red "(@+[a-zA-Z]+)"
+
+# Numbers / Decimal Literal 
+color blue "\b([0-9]+)\b"
+# Unicode Literal "U+"
+color blue "\b(U\++[0-9A-Z]+)\b"
+# Binary Literal "0b"
+color blue "\b(0b+[0-1]+)\b"
+# Octal Literal "0o"
+color blue "\b(0o+[0-7]+)\b"
+# Hexadecimal Literal "0x"
+color blue "\b(0x+[0-9A-Fa-f]+)\b"
+
+# Standard Types
+color brightmagenta "\b((U)?Int(8|16|32|64))\b"
+color brightmagenta "\b(true|false|nil)\b"
+color brightmagenta "\b(UInt|Int|Double|String|Float|Bool|Dictionary|Array|Character|Range|Set|Bit|RawByte|Slice)\b"
+color brightmagenta "\b(UnicodeScalar|UnsafePointer|UnsafeMutablePointer)\b"
+color magenta "\b(AnyObject)\b"
+
+# Standard Type Aliases and Protocols
+color magenta "\b(AnyObject|AnyClass|GeneratorType|AnyGenerator|Element|Optional|Mirror)\b"
+color magenta "\b(UnicodeScalarType|IntMax|UIntMax|Void|Any|Comparable|Equatable|Hashable|SequenceType)\b"
+
+# Standard Libraries
+color cyan "\b(Foundation|Glibc|Darwin|XCTest)\b"
+
+# Text
+color red ""[^"]*""
+
+# Variable in Text
+color white start="\\\(" end="\)"
+
+# Comments
+color green "//.*"
+color brightgreen "///.*"
+color green start="/\*\*" end="\*/"
+color green "[/**]"
+
+# Trailing whitespace
+color ,green "[[:space:]]+$"
