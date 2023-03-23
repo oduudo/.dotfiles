@@ -2,7 +2,7 @@
 
 # .aliases.bash by oduudo
 
-### debug 
+### debug
 if [ "$bash_debug" = yes ]; then echo Start of bash_aliases.bash
 fi
 
@@ -28,10 +28,10 @@ alias cls='clear'
 
 alias reinst!='cd ~/.dotfiles && . ~/.dotfiles/script/bootstrap.s'
 alias reload!='. ~/.bashrc'
-alias count='wc -l'
-alias tft='curl "http://itsthisforthat.com/api.php?text"'
+#alias count='wc -l'
+#alias tft='curl "http://itsthisforthat.com/api.php?text"'
 
-alias shout="tr '[[:lower:]]' '[[:upper:]]'"
+#alias shout="tr '[[:lower:]]' '[[:upper:]]'"
 
 ### cd
 alias ..='cd ..'
@@ -47,18 +47,19 @@ alias ..dot='cd ~/.dotfiles'
 #if [ -x /usr/bin/dircolors ]; then
 if ls --color -d . >/dev/null 2>&1; then  # GNU ls
 	echo dircolors ok
-	if [ "$bash_debug" = yes ]; then echo dircolors 
+	if [ "$bash_debug" = yes ]; then echo dircolors
 	fi
-    
+
 	export COLUMNS  # Remember columns for subprocesses.
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	
+
 	function ls {
     command ls -Fhv --color=always --time-style=long-iso -C "$@" | less -R -X -F -E
 	}
 	#	alias ls='ls -Fhv --color=auto --time-style=long-iso'
-	
-	alias l='ls'			
+
+	alias l='ls'
+	alias l.='ls -d .* --color=auto'
     alias ll='ls -la'		# Long all
 	alias la='ls -a'		# List all
 	alias lr='ls -Rla'		# List recursive long incl. .files
@@ -101,19 +102,19 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
 # rails
-alias b="bundle"
-alias be='bundle exec'
-alias bi='bundle install --quiet'
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
-alias a='autotest -rails'
-alias rake='ruby -S rake'
-alias tlog='tail -f log/development.log'
-alias scaffold='script/generate nifty_scaffold'
-alias migrate='rake db:migrate db:test:clone'
-alias rst='touch tmp/restart.txt'
-alias specs="rspec --format=documentation"
+#alias b="bundle"
+#alias be='bundle exec'
+#alias bi='bundle install --quiet'
+#alias sc='script/console'
+#alias ss='script/server'
+#alias sg='script/generate'
+#alias a='autotest -rails'
+#alias rake='ruby -S rake'
+#alias tlog='tail -f log/development.log'
+#alias scaffold='script/generate nifty_scaffold'
+#alias migrate='rake db:migrate db:test:clone'
+#alias rst='touch tmp/restart.txt'
+#alias specs="rspec --format=documentation"
 
 # commands starting with % for pasting from web
 #alias %=' '
@@ -126,6 +127,6 @@ alias sudo="sudo "
 alias catn="cat -n"
 
 
-### debug 
+### debug
 if [ "$bash_debug" = yes ]; then echo End of bash_aliases.bash
 fi
