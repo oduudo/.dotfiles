@@ -30,6 +30,7 @@ load_dotfiles() {
         $HOME/.dotfiles/bash_aliases.bash 		# Aliases
         $HOME/.dotfiles/functions/* 			# Functions
         $HOME/.dotfiles/bash_prompt.bash 		# Custom bash prompt
+        $HOME/.dotfiles/bash_specific.bash 		# System specific items
 
 #		$HOME/.dotfiles/inputrc.bash
 #        $(brew --prefix)/etc/bash_completion 	# Bash completion (installed via Homebrew)

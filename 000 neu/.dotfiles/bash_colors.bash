@@ -2,7 +2,7 @@
 
 # bash_colors.bash by oduudo
 
-### debug 
+### debug
 if [ "$bash_debug" = yes ]; then echo Start of bash_colors.bash
 fi
 
@@ -24,7 +24,7 @@ set_prompts() {
     local lpurple=""
     local cyan=""
     local lcyan=""
-    local lgrey=""	
+    local lgrey=""
     local white=""
 
 	local nobkg=""
@@ -39,35 +39,35 @@ set_prompts() {
 
     local hostStyle=""
     local userStyle=""
-	
+
 # set a fancy prompt (non-color, unless we know we "want" color)
-	case "$TERM" in
-		xterm-color) color_prompt=yes
+#	case "$TERM" in
+#		xterm-color) color_prompt=yes
 # debug
 #		echo $color_prompt case
-		;;
-	esac
+#		;;
+#	esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
 	force_color_prompt=yes
 
-	if [ -n "$force_color_prompt" ]; then
+#	if [ -n "$force_color_prompt" ]; then
 #		if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-		if tput setaf 1 >&/dev/null; then
+#		if tput setaf 1 >&/dev/null; then
   # We have color support; assume it's compliant with Ecma-48
   # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
   # a case would tend to support setf rather than setaf.)
 	color_prompt=yes
-		else
-	color_prompt=
-		fi
-	fi	
+#		else
+#	color_prompt=
+#		fi
+#	fi
 
-# debug	
-#	echo $color_prompt 
-	
+# debug
+#	echo $color_prompt
+
 
     if [ "$color_prompt" = yes ]; then
 
@@ -157,7 +157,7 @@ set_prompts
 unset set_prompts color_prompt force_color_prompt
 ##########
 echo
-echo txt standard colors 30 - 37 : 
+echo txt standard colors 30 - 37 :
 echo
 # bkg standard colors
 for C in {30..37}; do
@@ -165,9 +165,9 @@ for C in {30..37}; do
 done
 echo -e "\e(B\e[m"
 
-echo 
-echo txt high intensity colors 90 - 97 : 
-echo 
+echo
+echo txt high intensity colors 90 - 97 :
+echo
 # bkg high intensity colors
 for C in {90..97}; do
     echo -en "\e[${C}m$C "
@@ -175,7 +175,7 @@ done
 echo -e "\e(B\e[m"
 
 echo
-echo bkg standard colors 40 - 47 : 
+echo bkg standard colors 40 - 47 :
 echo
 # bkg standard colors
 for C in {40..47}; do
@@ -183,31 +183,31 @@ for C in {40..47}; do
 done
 echo -e "\e(B\e[m"
 
-echo 
-echo bkg high intensity colors 100 - 107 : 
-echo 
+echo
+echo bkg high intensity colors 100 - 107 :
+echo
 # bkg high intensity colors
 for C in {100..107}; do
     echo -en "\e[${C}m$C "
 done
 echo -e "\e(B\e[m"
 echo
-echo 256 colors 48 :  
-echo 
+echo 256 colors 48 :
+echo
 # 256 colors
 for C in {16..255}; do
     echo -en "\e[48;5;${C}m$C "
 done
 echo -e "\e(B\e[m"
-echo 
-echo 256 colors 38 : 
-echo 
+echo
+echo 256 colors 38 :
+echo
 # 256 colors
 for C in {16..255}; do
     echo -en "\e[38;5;${C}m$C "
 done
 echo -e "\e(B\e[m"
 
-### debug 
+### debug
 if [ "$bash_debug" = yes ]; then echo End of bash_color.bash
 fi
