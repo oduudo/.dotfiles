@@ -10,7 +10,7 @@ fi
 [ -z "$PS1" ] && return
 
 # shortcut to this dotfiles path is $BASH
-export BASH=$HOME/.dotfiles
+# export BASH=$HOME/.dotfiles
 export DOTFILES=$HOME/.dotfiles
 
 
@@ -28,7 +28,7 @@ load_dotfiles() {
         $HOME/.dotfiles/bash_config.bash 		# Options and Exports
 		$HOME/.dotfiles/bash_path.bash 			# Path modifications
         $HOME/.dotfiles/bash_aliases.bash 		# Aliases
-        $HOME/.dotfiles/functions/* 			# Functions
+#        $HOME/.dotfiles/functions/* 			# Functions
         $HOME/.dotfiles/bash_prompt.bash 		# Custom bash prompt
         $HOME/.dotfiles/bash_specific.bash 		# System specific items
 

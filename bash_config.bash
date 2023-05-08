@@ -36,7 +36,6 @@ fi
 export LANG=de_DE.utf-8
 #de_DE.utf-8
 export CLICOLOR=1 #Colorizes output of ls and others.
-#export EDITOR=vi
 export EDITOR=nano
 export VISUAL=$EDITOR
 export PAGER=less

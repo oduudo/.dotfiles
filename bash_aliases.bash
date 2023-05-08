@@ -9,10 +9,6 @@ fi
 ### ALIASES ###
 # my own
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 alias x="exit"
 alias ep="echo $PATH"
 alias sf="sudo find / -iname "
@@ -28,9 +24,6 @@ alias cls='clear'
 
 alias reload!='. ~/.bashrc'
 #alias count='wc -l'
-#alias tft='curl "http://itsthisforthat.com/api.php?text"'
-
-#alias shout="tr '[[:lower:]]' '[[:upper:]]'"
 
 ### cd
 alias ..='cd ..'
@@ -42,11 +35,11 @@ alias entw='cd /var/www/virtual/uja/udojanzen.de/mycode/portfolios_entwicklung'
 alias prod='cd /var/www/virtual/uja/udojanzen.de/mycode/portfolios'
 alias kurse='php ./update_kurse.php'
 
-### ls -F:file types, -h:readable size, -v:logical order,
-
+### ls Bedeutung der Optionen -F:file types, -h:readable size, -v:logical order,
 alias ls='ls --color=auto'
 alias l='ls'
 alias l.='ls -d .*'
+alias le='ls -le'       # syno privileges
 alias ll='ls -la'		# Long all
 alias la='ls -a'		# List all
 alias lr='ls -Rla'		# List recursive long incl. .files
@@ -62,10 +55,6 @@ alias egrep='egrep --color=auto'
 
 alias mv='mv -Z'
 alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
-
-
-# find
-#alias find_source='find . -type f -not -path "*/target/*" -not -path "*/.svn/*" -not -path "*/.git/*" -not -name ".DS_Store" -not -iname "*.jar" -not -iname "*.gif" -not -iname "*.jpg" -not -iname "*.png"'
 
 # git
 alias gl='git pull'
